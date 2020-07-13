@@ -1,4 +1,5 @@
 rowNum = int(input("What row would you like to go up to?\n")) # Getting the amount of rows that the user would like to view
+print()
 
 list = []  # Declaring an empty list
 
@@ -18,11 +19,8 @@ for row in range(rowNum):
 
 # for loop to iterate through each row   
 for row in range(rowNum):
-    # for loop to iterate through each column and add a space accordingly (row 1 will have 4 spaces from the left, row 2 will have 3, etc)
-    for col in range(rowNum - row - 1):
-        print(" ", end="")
     for col in range(row + 1):
         print(list[row][col], end=" ")
-    print()
+    print(" ")
 
 print("\nThank you for using Shahrukh Qureshi's Pascal's Triangle Program!")
