@@ -1,3 +1,6 @@
+from colorama import Fore, Back, init, Style
+
+init()
 rowNum = int(input("What row would you like to go up to?\n")) # Getting the amount of rows that the user would like to view
 
 list = []  # Declaring an empty list
@@ -22,7 +25,16 @@ for row in range(rowNum):
     for col in range(rowNum - row - 1):
         print(" ", end="")
     for col in range(row + 1):
-        print(list[row][col], end=" ")
+        # get the value from the list
+        number = list[row][col]
+        # give color
+        text = ""
+        # if the number is odd give it some color
+        if number%2 == 1:
+            text = Fore.MAGENTA + str(number)
+        else:
+            text = Style.RESET_ALL + str(number)
+        print(text, end=" ")
     print()
 
-print("\nThank you for using Shahrukh Qureshi's Pascal's Triangle Program!")
+print(Style.RESET_ALL +  "\nThank you for using Shahrukh Qureshi's Pascal's Triangle Program!")
